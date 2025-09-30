@@ -34,9 +34,13 @@ local LastBuyT = {}
 local BUY_COOLDOWN = 1 -- detik, biar ga spam
 
 -- UI
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "AutoBuyUI"
-screenGui.Parent = game.CoreGui
+screenGui.ResetOnSpawn = false
+screenGui.Parent = player:WaitForChild("PlayerGui")
 
 local mainFrame = Instance.new("Frame", screenGui)
 mainFrame.Size = UDim2.new(0, 220, 0, 300)
